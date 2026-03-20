@@ -1,0 +1,28 @@
+model:
+  type: conv_snn
+  channels: 128
+  in_channels: 1
+  tau: 2.0
+  T: 4
+  surrogate: atan
+  surrogate_alpha: 2.0
+  num_classes: 10
+
+data:
+  dataset: fashion_mnist
+  data_dir: ./data
+  batch_size: 512
+  encoding: direct
+
+training:
+  epochs: 50
+  optimizer: adam
+  lr: 1.0e-3
+  weight_decay: 0.0
+  scheduler: cosine
+  scheduler_T_max: 50
+
+seed: 42
+
+ofc:
+  enabled: false

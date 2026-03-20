@@ -1,0 +1,30 @@
+model:
+  type: conv_snn
+  channels: 128
+  in_channels: 3
+  input_size: 32
+  num_conv_blocks: 4
+  tau: 2.0
+  T: 4
+  surrogate: atan
+  surrogate_alpha: 2.0
+  num_classes: 10
+
+data:
+  dataset: cifar10
+  data_dir: ./data
+  batch_size: 256
+  encoding: direct
+
+training:
+  epochs: 100
+  optimizer: adam
+  lr: 5.0e-4
+  weight_decay: 0.0
+  scheduler: cosine
+  scheduler_T_max: 100
+
+seed: 42
+
+ofc:
+  enabled: false

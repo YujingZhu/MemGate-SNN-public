@@ -1,0 +1,44 @@
+model:
+  type: conv_snn
+  channels: 128
+  in_channels: 3
+  input_size: 32
+  num_conv_blocks: 4
+  tau: 2.0
+  T: 4
+  surrogate: atan
+  surrogate_alpha: 2.0
+  num_classes: 10
+
+data:
+  dataset: cifar10
+  data_dir: ./data
+  batch_size: 256
+  encoding: direct
+
+training:
+  epochs: 100
+  optimizer: adam
+  lr: 5.0e-4
+  weight_decay: 0.0
+  scheduler: cosine
+  scheduler_T_max: 100
+
+seed: 42
+
+ofc:
+  enabled: true
+  mode: membrane
+  warmup_epochs: 10
+  beta: 0.9
+  ema_decay: 0.99
+  cold_start_batches: 100
+  cold_start_theta: 0.7
+  steepness: 3.0
+  min_weight: 0.15
+  early_consensus: true
+  early_check_ratio: 0.5
+  early_exit_theta_boost: 1.1
+  track_energy: true
+  pj_per_sop: 0.9
+  log_dir: logs/ofc_cifar10

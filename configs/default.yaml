@@ -1,0 +1,42 @@
+model:
+  type: conv_snn          # conv_snn | fc_snn
+  channels: 128
+  in_channels: 1          # input channels (1 for MNIST/FMNIST, 2 for N-MNIST)
+  tau: 2.0                # membrane time constant (decay = 1/tau = 0.5)
+  T: 4                    # number of time steps
+  surrogate: atan         # atan | rectangular
+  surrogate_alpha: 2.0
+  num_classes: 10
+
+data:
+  dataset: mnist
+  data_dir: ./data
+  batch_size: 512
+  encoding: direct        # direct | poisson
+
+training:
+  epochs: 30
+  optimizer: adam
+  lr: 1.0e-3
+  weight_decay: 0.0
+  scheduler: cosine
+  scheduler_T_max: 30
+
+seed: 42
+
+ofc:
+  enabled: true
+  mode: membrane          # membrane (default) | spike (legacy)
+  warmup_epochs: 5        # pure SG for first N epochs before OFC modulation
+  beta: 0.9
+  ema_decay: 0.99
+  cold_start_batches: 100
+  cold_start_theta: 0.7
+  steepness: 5.0
+  min_weight: 0.05
+  early_consensus: true
+  early_check_ratio: 0.5
+  early_exit_theta_boost: 1.1
+  track_energy: true
+  pj_per_sop: 0.9
+  log_dir: logs/ofc

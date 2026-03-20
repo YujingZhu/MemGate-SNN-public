@@ -1,0 +1,59 @@
+# Data & datasets
+data/
+
+# Model checkpoints
+checkpoints/
+
+# Secrets
+.env
+*.env
+
+# Logs & results
+logs/
+results/
+
+# Claude Code
+.claude/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+env/
+venv/
+
+# IDE
+.vscode/
+.idea/
+
+# LaTeX
+*.aux
+*.bbl
+*.blg
+*.log
+*.out
+*.synctex.gz
+
+# Archives
+*.zip
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Vivado
+*.jou
+*.backup.*
+*.str
+*.pb
+.Xil/
+
+# LUT data (regenerable)
+*.mem
