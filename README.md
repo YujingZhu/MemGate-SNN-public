@@ -227,7 +227,7 @@ All behavior is controlled by YAML configs in `configs/`. 17 configs span four d
 |:---|:---|
 | `scripts/full_analysis.py` | Multi-dataset comparison -> PNG + LaTeX |
 | `scripts/analyze_ofc.py` | OFC plots (CDF, histogram, theta curve) |
-| `scripts/paper_figures.py` | IEEE / AICAS paper-quality figures |
+| `scripts/paper_figures.py` | IEEE / EDSSC paper-quality figures |
 | `scripts/per_class_ofc.py` | Per-class OFC heatmap + confusion matrix |
 | `scripts/calibration_analysis.py` | Reliability diagrams + ECE |
 | `scripts/ood_detection.py` | OOD detection (AUROC) |
@@ -258,8 +258,8 @@ python scripts/run_ablation.py --epochs 30 --datasets mnist fmnist
 # Paper figures (IEEE double-column)
 python scripts/paper_figures.py --output-dir results/paper_figures
 
-# Paper figures (AICAS single-column, 3.5")
-python scripts/paper_figures.py --aicas --output-dir results/aicas_figures
+# Paper figures (EDSSC single-column, 3.5")
+python scripts/paper_figures.py --aicas --output-dir results/edssc_figures
 
 ```
 
@@ -376,9 +376,9 @@ If you find this work useful, please cite:
 @inproceedings{memgate2026,
   title     = {{MemGate-SNN}: Membrane-Potential Confidence Gating for
                Energy-Efficient Spiking Neural Networks},
-  author    = {Anonymous},
-  booktitle = {IEEE International Conference on Artificial Intelligence
-               Circuits and Systems (AICAS)},
+  author    = {Zhu, Yujing and Wang, Xintong and Yao, Enyi},
+  booktitle = {IEEE International Conference on Electron Devices and
+               Solid-State Circuits (EDSSC)},
   year      = {2026}
 }
 ```
